@@ -1,0 +1,16 @@
+﻿<!-- Pages/ListaDeProductos.razor -->
+@page "/equipos"
+@inject EquipoService EquipoService
+
+<h3>Lista De Equipos</h3>
+
+@if (equipos == null) {
+    <p>Cargando...</p>
+} else {
+    <ul>
+        @foreach (var equipo in equipos)
+        {
+            <li>@equipo.eq_Nombre - @equipo.eq_Precio.ToString("C")</li>
+    }
+    </ul>
+}
