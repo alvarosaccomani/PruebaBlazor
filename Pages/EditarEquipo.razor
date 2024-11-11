@@ -1,0 +1,21 @@
+﻿@page "/actualizar-equipo/{eq_Id:int}"
+@inject EquipoService EquipoService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Editar Equipo</PageTitle>
+
+<h1>Editar Equipo</h1>
+
+<EditForm Model="@equipo" OnValidSubmit="ActualizarEquipo">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <InputText id="nombre" class="form-control" @bind-Value="equipo.eq_Nombre" />
+    </div>
+    <div class="form-group">
+        <label for="precio">Precio</label>
+        <InputNumber id="precio" class="form-control" @bind-Value="equipo.eq_Precio" />
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</EditForm>
