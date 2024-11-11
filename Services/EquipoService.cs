@@ -27,4 +27,7 @@ public class EquipoService {
     public async Task ActualizarEquipoAsync(Equipo equipo) {
         await _httpClient.PutAsJsonAsync($"https://localhost:7204/api/equipos/{equipo.eq_Id}", equipo);
     }
+    public async Task EliminarEquipoAsync(int eq_Id) {
+        await _httpClient.DeleteAsync($"https://localhost:7204/api/equipos/{eq_Id}");
+    }
 }
