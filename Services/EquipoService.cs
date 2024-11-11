@@ -17,7 +17,14 @@ public class EquipoService {
     public async Task<List<Equipo>> ObtenerEquiposAsync() {
         return await _httpClient.GetFromJsonAsync<List<Equipo>>("https://localhost:7204/api/equipos");
     }
+    public async Task<Equipo> ObtenerEquipoPorIdAsync(int eq_Id)
+    {
+        return await _httpClient.GetFromJsonAsync<Equipo>($"https://localhost:7204/api/equipos/{eq_Id}");
+    }
     public async Task AgregarEquipoAsync(Equipo equipo) {
         await _httpClient.PostAsJsonAsync("https://localhost:7204/api/equipos", equipo);
+    }
+    public async Task ActualizarEquipoAsync(Equipo equipo) {
+        await _httpClient.PutAsJsonAsync($"https://localhost:7204/api/equipos/{equipo.eq_Id}", equipo);
     }
 }
