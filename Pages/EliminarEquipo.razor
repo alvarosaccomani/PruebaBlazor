@@ -1,0 +1,10 @@
+﻿@page "/eliminar-equipo/{eq_Id:int}"
+@inject EquipoService EquipoService
+@inject NavigationManager NavigationManager
+
+<h3>Eliminar Equipo</h3>
+
+<p>¿Estás seguro de que deseas eliminar este equipo?</p>
+
+<button class="btn btn-danger" @onclick="BorrarEquipo">Eliminar</button>
+<button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
