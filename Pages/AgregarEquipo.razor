@@ -17,5 +17,9 @@
         <label for="precio">Precio</label>
         <InputNumber id="precio" class="form-control" @bind-Value="nuevoEquipo.eq_Precio" />
     </div>
+    <div class="form-group">
+        <label for="archivoPdf">Archivo PDF</label>
+        <InputFile OnChange="SeleccionarArchivo" />
+    </div>
     <button type="submit" class="btn btn-primary">Agregar</button>
 </EditForm>
